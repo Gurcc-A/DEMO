@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Меню · Bee Tasty Story</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link" aria-label="Bee Tasty Story, на головну">
+        <svg aria-hidden="true" width="36" height="36" viewBox="-30 -30 60 60"><polygon points="0,-28 24,-14 24,14 0,28 -24,14 -24,-14" fill="#17140F"></polygon><path d="M-14 -7H14M-14 4H14M-9 15H9" stroke="#FFC21A" stroke-width="5" stroke-linecap="round"></path></svg>
+        <span class="logo-text">Bee Tasty Story</span>
+      </a>
+      <nav class="main-nav" aria-label="Головна навігація">
+        <a href="index.html" class="nav-link">Головна</a>
+        <a href="story.html" class="nav-link">Історія</a>
+        <a href="locations.html" class="nav-link">Адреси</a>
+        <a href="menu.html" class="nav-link nav-menu-btn active">Меню</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="menu-header-banner" style="background:#FFC21A">
+      <div style="max-width:1200px;margin:0 auto;padding:56px 24px">
+        <h1 style="margin:0 0 12px;font-family:'Unbounded',sans-serif;font-weight:700;font-size:clamp(36px,5vw,56px);line-height:1.08">Меню</h1>
+        <p style="margin:0;font-size:18px;line-height:1.55;max-width:600px">Асортимент кав'ярні: ароматна кава, свіжа випічка та ніжні десерти. Оберіть категорію нижче.</p>
+      </div>
+    </section>
+
+    <section style="background:#FFF6DC">
+      <div style="max-width:1200px;margin:0 auto;padding:32px 24px 72px">
+        <div role="group" aria-label="Категорії меню" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px" id="category-chips">
+          <button class="chip-btn active" data-cat="all" style="background:#17140F;color:#FFC21A;border:2px solid #17140F;font-weight:800;font-size:16px;padding:10px 22px;min-height:44px;border-radius:999px">Усе</button>
+          <button class="chip-btn" data-cat="autumn" style="background:transparent;color:#17140F;border:2px solid #17140F;font-weight:800;font-size:16px;padding:10px 22px;min-height:44px;border-radius:999px">Смак осені</button>
+          <button class="chip-btn" data-cat="coffee" style="background:transparent;color:#17140F;border:2px solid #17140F;font-weight:800;font-size:16px;padding:10px 22px;min-height:44px;border-radius:999px">Кава</button>
+          <button class="chip-btn" data-cat="bakery" style="background:transparent;color:#17140F;border:2px solid #17140F;font-weight:800;font-size:16px;padding:10px 22px;min-height:44px;border-radius:999px">Випічка</button>
+          <button class="chip-btn" data-cat="dessert" style="background:transparent;color:#17140F;border:2px solid #17140F;font-weight:800;font-size:16px;padding:10px 22px;min-height:44px;border-radius:999px">Десерти</button>
+        </div>
+
+        <section class="menu-group" data-cat="autumn" style="margin-bottom:48px">
+          <div style="background:#2A1B10;color:#FFF6DC;border-radius:28px;padding:28px">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:20px">
+              <h2 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:28px;line-height:1.15">Смак осені</h2>
+              <span style="background:#B7CC6A;color:#17140F;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px">Новинки сезону</span>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+          <article style="background:#FFFFFF;color:#17140F;border:3px solid #B7CC6A;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;min-height:24px">
+              <span style="background:#B7CC6A;color:#17140F;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:999px">Новинка</span>
+              
+            </div>
+            <h3 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;line-height:1.2">Фісташкове латте</h3>
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#5B5340;flex:1">Кава, молоко та фісташка. Осінь у чашці.</p>
+            <p style="margin:6px 0 0;font-family:'Unbounded',sans-serif;font-weight:500;font-size:20px">90 / 100 ₴</p>
+          </article>
+          <article style="background:#FFFFFF;color:#17140F;border:3px solid #B7CC6A;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;min-height:24px">
+              <span style="background:#B7CC6A;color:#17140F;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:999px">Новинка</span>
+              
+            </div>
+            <h3 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;line-height:1.2">Фісташковий торт</h3>
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#5B5340;flex:1">Солодка новинка у вітрині.</p>
+            <p style="margin:6px 0 0;font-family:'Unbounded',sans-serif;font-weight:500;font-size:20px">[ціна] ₴</p>
+          </article>
+          <article style="background:#FFFFFF;color:#17140F;border:3px solid #B7CC6A;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;min-height:24px">
+              <span style="background:#B7CC6A;color:#17140F;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:999px">Новинка</span>
+              <span style="border:2px dashed #8A7D5A;color:#5B5340;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 10px;border-radius:999px">демо</span>
+            </div>
+            <h3 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;line-height:1.2">Пряний капучино</h3>
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#5B5340;flex:1">Кава з корицею та мускатним горіхом.</p>
+            <p style="margin:6px 0 0;font-family:'Unbounded',sans-serif;font-weight:500;font-size:20px">85 ₴</p>
+          </article>
+          <article style="background:#FFFFFF;color:#17140F;border:3px solid #B7CC6A;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;min-height:24px">
+              <span style="background:#B7CC6A;color:#17140F;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:999px">Новинка</span>
+              <span style="border:2px dashed #8A7D5A;color:#5B5340;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 10px;border-radius:999px">демо</span>
+            </div>
+            <h3 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;line-height:1.2">Яблучний штрудель</h3>
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#5B5340;flex:1">Тепле яблуко, кориця, хрустке тісто.</p>
+            <p style="margin:6px 0 0;font-family:'Unbounded',sans-serif;font-weight:500;font-size:20px">70 ₴</p>
+          </article>
+
+            </div>
+          </div>
+        </section>
+        <section class="menu-group" data-cat="coffee" style="margin-bottom:48px">
+          <div>
+            <h2 style="margin:0 0 20px;font-family:'Unbounded',sans-serif;font-weight:700;font-size:28px;line-height:1.15">Кава</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+          <article style="background:#FFFFFF;color:#17140F;border:3px solid #17140F;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;min-height:24px">
+              
+              <span style="border:2px dashed #8A7D5A;color:#5B5340;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 10px;border-radius:999px">демо</span>
+            </div>
+            <h3 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;line-height:1.2">Еспресо</h3>
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#5B5340;flex:1">Класичний міцний шот.</p>
+            <p style="margin:6px 0 0;font-family:'Unbounded',sans-serif;font-weight:500;font-size:20px">45 ₴</p>
+          </article>
+          <article style="background:#FFFFFF;color:#17140F;border:3px solid #17140F;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;min-height:24px">
+              
+              <span style="border:2px dashed #8A7D5A;color:#5B5340;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 10px;border-radius:999px">демо</span>
+            </div>
+            <h3 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;line-height:1.2">Американо</h3>
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#5B5340;flex:1">Еспресо з гарячою водою.</p>
+            <p style="margin:6px 0 0;font-family:'Unbounded',sans-serif;font-weight:500;font-size:20px">55 ₴</p>
+          </article>
+          <article style="background:#FFFFFF;color:#17140F;border:3px solid #17140F;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;min-height:24px">
+              
+              <span style="border:2px dashed #8A7D5A;color:#5B5340;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 10px;border-radius:999px">демо</span>
+            </div>
+            <h3 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;line-height:1.2">Капучино</h3>
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#5B5340;flex:1">Еспресо, молоко й щільна пінка.</p>
+            <p style="margin:6px 0 0;font-family:'Unbounded',sans-serif;font-weight:500;font-size:20px">70 / 85 ₴</p>
+          </article>
+          <article style="background:#FFFFFF;color:#17140F;border:3px solid #17140F;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;min-height:24px">
+              
+              <span style="border:2px dashed #8A7D5A;color:#5B5340;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 10px;border-radius:999px">демо</span>
+            </div>
+            <h3 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;line-height:1.2">Латте</h3>
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#5B5340;flex:1">М'яка кава з великою кількістю молока.</p>
+            <p style="margin:6px 0 0;font-family:'Unbounded',sans-serif;font-weight:500;font-size:20px">75 / 90 ₴</p>
+          </article>
+          <article style="background:#FFFFFF;color:#17140F;border:3px solid #17140F;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;min-height:24px">
+              
+              <span style="border:2px dashed #8A7D5A;color:#5B5340;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 10px;border-radius:999px">демо</span>
+            </div>
+            <h3 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;line-height:1.2">Какао</h3>
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#5B5340;flex:1">Гаряче какао для холодного дня.</p>
+            <p style="margin:6px 0 0;font-family:'Unbounded',sans-serif;font-weight:500;font-size:20px">65 ₴</p>
+          </article>
+          <article style="background:#FFFFFF;color:#17140F;border:3px solid #17140F;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;min-height:24px">
+              
+              <span style="border:2px dashed #8A7D5A;color:#5B5340;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 10px;border-radius:999px">демо</span>
+            </div>
+            <h3 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;line-height:1.2">Холодна кава</h3>
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#5B5340;flex:1">Освіжаюча кава з льодом.</p>
+            <p style="margin:6px 0 0;font-family:'Unbounded',sans-serif;font-weight:500;font-size:20px">80 ₴</p>
+          </article>
+
+            </div>
+          </div>
+        </section>
+        <section class="menu-group" data-cat="bakery" style="margin-bottom:48px">
+          <div>
+            <h2 style="margin:0 0 20px;font-family:'Unbounded',sans-serif;font-weight:700;font-size:28px;line-height:1.15">Випічка</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+          <article style="background:#FFFFFF;color:#17140F;border:3px solid #17140F;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;min-height:24px">
+              
+              <span style="border:2px dashed #8A7D5A;color:#5B5340;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 10px;border-radius:999px">демо</span>
+            </div>
+            <h3 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;line-height:1.2">Круасан</h3>
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#5B5340;flex:1">Масляний, з хрусткою скоринкою.</p>
+            <p style="margin:6px 0 0;font-family:'Unbounded',sans-serif;font-weight:500;font-size:20px">55 ₴</p>
+          </article>
+          <article style="background:#FFFFFF;color:#17140F;border:3px solid #17140F;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;min-height:24px">
+              
+              <span style="border:2px dashed #8A7D5A;color:#5B5340;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 10px;border-radius:999px">демо</span>
+            </div>
+            <h3 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;line-height:1.2">Булочка з корицею</h3>
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#5B5340;flex:1">М'яка, ароматна, ще тепла.</p>
+            <p style="margin:6px 0 0;font-family:'Unbounded',sans-serif;font-weight:500;font-size:20px">50 ₴</p>
+          </article>
+          <article style="background:#FFFFFF;color:#17140F;border:3px solid #17140F;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;min-height:24px">
+              
+              <span style="border:2px dashed #8A7D5A;color:#5B5340;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 10px;border-radius:999px">демо</span>
+            </div>
+            <h3 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;line-height:1.2">Сирник</h3>
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#5B5340;flex:1">Ніжний, зі сметаною.</p>
+            <p style="margin:6px 0 0;font-family:'Unbounded',sans-serif;font-weight:500;font-size:20px">60 ₴</p>
+          </article>
+          <article style="background:#FFFFFF;color:#17140F;border:3px solid #17140F;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;min-height:24px">
+              
+              <span style="border:2px dashed #8A7D5A;color:#5B5340;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 10px;border-radius:999px">демо</span>
+            </div>
+            <h3 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;line-height:1.2">Пиріг дня</h3>
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#5B5340;flex:1">Щодня нова начинка.</p>
+            <p style="margin:6px 0 0;font-family:'Unbounded',sans-serif;font-weight:500;font-size:20px">65 ₴</p>
+          </article>
+
+            </div>
+          </div>
+        </section>
+        <section class="menu-group" data-cat="dessert" style="margin-bottom:48px">
+          <div>
+            <h2 style="margin:0 0 20px;font-family:'Unbounded',sans-serif;font-weight:700;font-size:28px;line-height:1.15">Десерти</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+          <article style="background:#FFFFFF;color:#17140F;border:3px solid #17140F;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;min-height:24px">
+              
+              <span style="border:2px dashed #8A7D5A;color:#5B5340;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 10px;border-radius:999px">демо</span>
+            </div>
+            <h3 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;line-height:1.2">Чізкейк</h3>
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#5B5340;flex:1">Вершковий, на тонкій основі.</p>
+            <p style="margin:6px 0 0;font-family:'Unbounded',sans-serif;font-weight:500;font-size:20px">110 ₴</p>
+          </article>
+          <article style="background:#FFFFFF;color:#17140F;border:3px solid #17140F;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;min-height:24px">
+              
+              <span style="border:2px dashed #8A7D5A;color:#5B5340;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 10px;border-radius:999px">демо</span>
+            </div>
+            <h3 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;line-height:1.2">Медовик</h3>
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#5B5340;flex:1">Класичний торт на меду.</p>
+            <p style="margin:6px 0 0;font-family:'Unbounded',sans-serif;font-weight:500;font-size:20px">90 ₴</p>
+          </article>
+          <article style="background:#FFFFFF;color:#17140F;border:3px solid #17140F;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;min-height:24px">
+              
+              <span style="border:2px dashed #8A7D5A;color:#5B5340;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 10px;border-radius:999px">демо</span>
+            </div>
+            <h3 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;line-height:1.2">Тірамісу</h3>
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#5B5340;flex:1">Кава, маскарпоне та какао.</p>
+            <p style="margin:6px 0 0;font-family:'Unbounded',sans-serif;font-weight:500;font-size:20px">120 ₴</p>
+          </article>
+          <article style="background:#FFFFFF;color:#17140F;border:3px solid #17140F;border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;min-height:24px">
+              
+              <span style="border:2px dashed #8A7D5A;color:#5B5340;font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:2px 10px;border-radius:999px">демо</span>
+            </div>
+            <h3 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:700;font-size:19px;line-height:1.2">Макарон</h3>
+            <p style="margin:0;font-size:16px;line-height:1.5;color:#5B5340;flex:1">Хрусткий зовні, ніжний всередині.</p>
+            <p style="margin:6px 0 0;font-family:'Unbounded',sans-serif;font-weight:500;font-size:20px">45 ₴</p>
+          </article>
+
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:#17140F;color:#F1E6C4">
+    <div style="max-width:1200px;margin:0 auto;padding:28px 24px;font-size:14px;line-height:1.6">
+      Bee Tasty Story · Кав'ярня й випічка у Вінниці. Демо-версія для узгодження концепції.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
