@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Unbounded:wght@500;700&display=swap&subset=cyrillic");
+/* === ОСНОВНІ СТИЛІ САЙТУ === */
+body{margin:0;font-family:'Manrope',system-ui,sans-serif;color:#17140F;background:#FFF6DC}
+a{color:#17140F}a:hover{color:#6B4A00}
+button{font-family:inherit;cursor:pointer}
+
+/* === СТИЛІ ЕЛЕМЕНТІВ КЕРУВАННЯ ТА КНОПОК === */
+.tab-btn, .chip-btn {
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+.tab-btn:hover, .chip-btn:hover {
+  opacity: 0.9;
+}
+
+/* === ШАПКА ТА НАВІГАЦІЯ (БЕЗ ЗАКРІПЛЕННЯ, 1 РЯДОК НА ТЕЛЕФОНІ) === */
+.site-header {
+  background: #FFC21A;
+  border-bottom: 3px solid #17140F;
+  position: static; /* Відкріплено від верху */
+  width: 100%;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #17140F;
+  flex-shrink: 0;
+}
+.logo-text {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap; /* Суворо в один рядок */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.main-nav::-webkit-scrollbar {
+  display: none;
+}
+.nav-link {
+  padding: 8px 16px;
+  min-height: 40px;
+  box-sizing: border-box;
+  font-weight: 800;
+  font-size: 15px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #17140F;
+  white-space: nowrap;
+  border: 2px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.nav-link:hover {
+  color: #6B4A00;
+}
+.nav-link.active {
+  background: #17140F;
+  color: #FFC21A;
+  border-color: #17140F;
+}
+.nav-link.active:hover {
+  color: #FFC21A;
+}
+.nav-link.nav-menu-btn {
+  border-color: #17140F;
+}
+
+/* Адаптація під смартфони: логотип і навігація в 1 акуратний рядок */
+@media (max-width: 680px) {
+  .header-inner {
+    padding: 10px 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .logo-link {
+    justify-content: center;
+  }
+  .main-nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Рівно 4 колонки в 1 стрічку */
+    gap: 4px;
+  }
+  .nav-link {
+    padding: 8px 4px;
+    font-size: 13px;
+    min-height: 38px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav-link {
+    font-size: 11.5px;
+    padding: 6px 2px;
+  }
+}
+
+/* Навігація у футері */
+.footer-nav{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:14px}
+.footer-nav a{color:#FFC21A}
+.footer-nav a:hover{color:#FFF6DC}
+
+/* Перемикач мови */
+.hdr-tools{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.hdr-tools .cart-open{margin-left:0}
+.lang-btn{min-height:44px;min-width:44px;padding:0 14px;border:2px solid #17140F;border-radius:999px;background:transparent;color:#17140F;font-weight:800;font-size:15px}
+.lang-btn:hover{background:#17140F;color:#FFC21A}
+.lang-btn:focus-visible{outline:3px solid #6B4A00;outline-offset:2px}
+@media(max-width:680px){.hdr-tools{justify-content:center}}

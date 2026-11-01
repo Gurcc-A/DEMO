@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Редактор меню · НАЗВА</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+  <style>
+    .f{display:flex;flex-direction:column;gap:4px;font-weight:700;font-size:13px}
+    .f input[type=text],.f input[type=password]{font:inherit;font-weight:400;font-size:16px;padding:10px 12px;min-height:44px;box-sizing:border-box;border:2px solid #17140F;border-radius:12px;background:#fff;width:100%}
+    .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:12px}
+    .it{border:2px solid #17140F;border-radius:16px;padding:14px;margin-bottom:14px;background:#FFFBF0}
+    .it.off{opacity:.6}
+    .ctl{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+    .ck{display:inline-flex;align-items:center;gap:8px;font-weight:700;min-height:44px}
+    .ck input{width:22px;height:22px}
+    .ab{min-height:44px;padding:0 18px;border:2px solid #17140F;border-radius:999px;background:transparent;color:#17140F;font:inherit;font-weight:800;cursor:pointer}
+    .ab:hover{background:#17140F;color:#FFC21A}
+    .ab.main{background:#17140F;color:#FFC21A}
+    .ab.danger{border-color:#A31D1D;color:#A31D1D}
+    .ab.danger:hover{background:#A31D1D;color:#fff}
+    .bar{position:sticky;top:0;z-index:5;background:#FFF6DC;border-bottom:3px solid #17140F;padding:12px 24px}
+    .bar .in{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}
+    #st.bad{border-color:#A31D1D;color:#A31D1D}
+    .ab:focus-visible,.f input:focus-visible{outline:3px solid #6B4A00;outline-offset:2px}
+  </style>
+</head>
+<body style="margin:0">
+  <header class="hero"><div class="wrap" style="padding:32px 24px"><h1>Редактор меню</h1><p>Змінюйте назви, ціни й наявність. Зміни зʼявляться на сайті приблизно за хвилину після збереження.</p></div></header>
+  <div class="bar"><div class="in">
+    <label class="f" style="flex:1 1 220px;max-width:320px">Пароль<input type="password" id="pw" autocomplete="current-password"></label>
+    <button type="button" class="ab main" id="save">Зберегти</button>
+    <button type="button" class="ab" id="dl">Завантажити копію</button>
+    <div id="st" class="ph" role="status" style="flex:1 1 260px">Завантажуємо меню…</div>
+  </div></div>
+  <main class="sec" id="ed"></main>
+  <script src="menu-config.js"></script>
+  <script>
+  (function () {
+    "use strict";
+    var $ = function (s) { return document.querySelector(s); };
+    var data = null, dirty = false;
+    function h(t, cls, x) { var e = document.createElement(t); if (cls) e.className = cls; if (x != null) e.textContent = x; return e; }
+    function say(t, bad) { var s = $("#st"); s.textContent = t; s.className = "ph" + (bad ? " bad" : ""); s.id = "st"; }
+    function btn(t, fn, cls) { var b = h("button", "ab " + (cls || ""), t); b.type = "button"; b.onclick = fn; return b; }
+    function field(lbl, o, k) {
+      var l = h("label", "f", lbl), i = document.createElement("input");
+      i.type = "text"; i.value = o[k] || "";
+      i.oninput = function () { o[k] = i.value; dirty = true; };
+      l.append(i); return l;
+    }
+    function check(lbl, get, set) {
+      var l = h("label", "ck"), i = document.createElement("input");
+      i.type = "checkbox"; i.checked = get();
+      i.onchange = function () { set(i.checked); dirty = true; draw(); };
+      l.append(i, document.createTextNode(lbl)); return l;
+    }
+    function move(a, i, d) { var j = i + d; if (j < 0 || j >= a.length) return; var t = a[i]; a[i] = a[j]; a[j] = t; dirty = true; draw(); }
+    function row() { var r = h("div", "row"); for (var i = 0; i < arguments.length; i++) r.append(arguments[i]); return r; }
+    function uid() { return "i" + Date.now().toString(36) + Math.floor(Math.random() * 99); }
+
+    function draw() {
+      var r = $("#ed"); r.replaceChildren();
+      data.categories.forEach(function (c, ci) {
+        var box = h("section", "card"); box.style.marginBottom = "24px"; box.style.alignItems = "stretch";
+        box.append(h("h2", "t", c.name || "Нова категорія"));
+        box.append(row(field("Назва", c, "name"), field("Name (English)", c, "name_en"), field("Підпис, необовʼязково", c, "badge"), field("Badge (English)", c, "badge_en")));
+        var cc = h("div", "ctl"); cc.style.marginBottom = "16px";
+        cc.append(check("Темний блок (для сезонної добірки)", function () { return c.style === "autumn"; }, function (v) { c.style = v ? "autumn" : ""; }),
+          btn("↑ Вище", function () { move(data.categories, ci, -1); }), btn("↓ Нижче", function () { move(data.categories, ci, 1); }),
+          btn("Видалити категорію", function () { if (confirm("Видалити категорію «" + c.name + "» з усіма позиціями?")) { data.categories.splice(ci, 1); dirty = true; draw(); } }, "danger"));
+        box.append(cc);
+        c.items.forEach(function (it, ii) {
+          var b = h("div", "it" + (it.hidden ? " off" : ""));
+          b.append(row(field("Назва", it, "name"), field("Name (English)", it, "name_en"), field("Ціна: 70 або 70 / 85", it, "price")));
+          b.append(row(field("Опис", it, "desc"), field("Description (English)", it, "desc_en"), field("Мітка, напр. Новинка", it, "tag"), field("Tag (English)", it, "tag_en")));
+          var k = h("div", "ctl");
+          k.append(check("Є в наявності", function () { return !it.hidden; }, function (v) { it.hidden = !v; }),
+            btn("↑", function () { move(c.items, ii, -1); }), btn("↓", function () { move(c.items, ii, 1); }),
+            btn("Видалити", function () { if (confirm("Видалити «" + it.name + "»?")) { c.items.splice(ii, 1); dirty = true; draw(); } }, "danger"));
+          b.append(k); box.append(b);
+        });
+        box.append(btn("+ Додати позицію", function () { c.items.push({ id: uid(), name: "", name_en: "", desc: "", desc_en: "", price: "", tag: "", tag_en: "", hidden: false }); dirty = true; draw(); }, "main"));
+        r.append(box);
+      });
+      r.append(btn("+ Додати категорію", function () { data.categories.push({ id: "c" + Date.now().toString(36), name: "", name_en: "", badge: "", badge_en: "", style: "", items: [] }); dirty = true; draw(); }, "main"));
+    }
+
+    function save() {
+      var pw = $("#pw").value, u = window.MENU_URL;
+      if (!u) return say("Спершу вкажіть адресу Worker-а в menu-config.js.", 1);
+      if (!pw) return say("Введіть пароль.", 1);
+      var bad = data.categories.some(function (c) { return c.items.some(function (i) { return !i.name.trim() || !/^[\d\s\/.,]*$/.test(i.price); }); });
+      if (bad) return say("Перевірте позиції: назва обовʼязкова, а ціна може містити лише цифри та «/».", 1);
+      say("Зберігаємо…");
+      fetch(u, { method: "PUT", headers: { "Authorization": "Bearer " + pw, "Content-Type": "application/json" }, body: JSON.stringify(data) })
+        .then(function (r) { return r.json().then(function (j) { return [r.status, j]; }); })
+        .then(function (a) {
+          if (a[0] === 200) { dirty = false; say("Збережено. На сайті зміни зʼявляться приблизно за хвилину."); }
+          else say(a[0] === 401 ? "Невірний пароль." : "Не збережено: " + (a[1].error || a[0]), 1);
+        }).catch(function () { say("Немає звʼязку із сервером меню.", 1); });
+    }
+
+    function get(u) { return fetch(u).then(function (r) { if (!r.ok) throw 0; return r.json(); }); }
+    (window.MENU_URL ? get(window.MENU_URL) : Promise.reject()).then(function (d) { data = d; draw(); say("Меню завантажено з сервера."); })
+      .catch(function () {
+        return get("menu.json").then(function (d) { data = d; draw(); say("Відкрито стартову копію (menu.json). Натисніть «Зберегти», щоб опублікувати її на сервері.", !window.MENU_URL); });
+      }).catch(function () { say("Не вдалося завантажити меню.", 1); });
+
+    $("#save").onclick = save;
+    $("#dl").onclick = function () {
+      if (!data) return;
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 1)], { type: "application/json" }));
+      a.download = "menu.json"; a.click();
+    };
+    window.addEventListener("beforeunload", function (e) { if (dirty) { e.preventDefault(); e.returnValue = ""; } });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+{
+ "version": 1,
+ "categories": [
+  {
+   "id": "autumn",
+   "name": "Смак осені",
+   "name_en": "Taste of autumn",
+   "badge": "Новинки сезону",
+   "badge_en": "Seasonal specials",
+   "style": "autumn",
+   "items": [
+    {
+     "id": "autumn1",
+     "name": "Фісташкове латте",
+     "name_en": "Pistachio latte",
+     "desc": "Кава, молоко та фісташка. Осінь у чашці.",
+     "desc_en": "Coffee, milk and pistachio. Autumn in a cup.",
+     "price": "90 / 100",
+     "tag": "Новинка",
+     "tag_en": "New",
+     "hidden": false
+    },
+    {
+     "id": "autumn2",
+     "name": "Фісташковий торт",
+     "name_en": "Pistachio cake",
+     "desc": "Солодка новинка у вітрині.",
+     "desc_en": "A sweet new arrival from the counter.",
+     "price": "150",
+     "tag": "Новинка",
+     "tag_en": "New",
+     "hidden": false
+    },
+    {
+     "id": "autumn3",
+     "name": "Пряний капучино",
+     "name_en": "Spiced cappuccino",
+     "desc": "Кава з корицею та мускатним горіхом.",
+     "desc_en": "Coffee with cinnamon and nutmeg.",
+     "price": "85",
+     "tag": "Новинка",
+     "tag_en": "New",
+     "hidden": false
+    },
+    {
+     "id": "autumn4",
+     "name": "Яблучний штрудель",
+     "name_en": "Apple strudel",
+     "desc": "Тепле яблуко, кориця, хрустке тісто.",
+     "desc_en": "Warm apple, cinnamon, crisp pastry.",
+     "price": "70",
+     "tag": "Новинка",
+     "tag_en": "New",
+     "hidden": false
+    }
+   ]
+  },
+  {
+   "id": "coffee",
+   "name": "Кава",
+   "name_en": "Coffee",
+   "badge": "",
+   "badge_en": "",
+   "style": "",
+   "items": [
+    {
+     "id": "coffee1",
+     "name": "Еспресо",
+     "name_en": "Espresso",
+     "desc": "Класичний міцний шот.",
+     "desc_en": "A classic strong shot.",
+     "price": "45",
+     "tag": "демо",
+     "tag_en": "demo",
+     "hidden": false
+    },
+    {
+     "id": "coffee2",
+     "name": "Американо",
+     "name_en": "Americano",
+     "desc": "Еспресо з гарячою водою.",
+     "desc_en": "Espresso with hot water.",
+     "price": "55",
+     "tag": "демо",
+     "tag_en": "demo",
+     "hidden": false
+    },
+    {
+     "id": "coffee3",
+     "name": "Капучино",
+     "name_en": "Cappuccino",
+     "desc": "Еспресо, молоко й щільна пінка.",
+     "desc_en": "Espresso, milk and dense foam.",
+     "price": "70 / 85",
+     "tag": "демо",
+     "tag_en": "demo",
+     "hidden": false
+    },
+    {
+     "id": "coffee4",
+     "name": "Латте",
+     "name_en": "Latte",
+     "desc": "М'яка кава з великою кількістю молока.",
+     "desc_en": "Smooth coffee with plenty of milk.",
+     "price": "75 / 90",
+     "tag": "демо",
+     "tag_en": "demo",
+     "hidden": false
+    },
+    {
+     "id": "coffee5",
+     "name": "Какао",
+     "name_en": "Cocoa",
+     "desc": "Гаряче какао для холодного дня.",
+     "desc_en": "Hot cocoa for a cold day.",
+     "price": "65",
+     "tag": "демо",
+     "tag_en": "demo",
+     "hidden": false
+    },
+    {
+     "id": "coffee6",
+     "name": "Холодна кава",
+     "name_en": "Iced coffee",
+     "desc": "Освіжаюча кава з льодом.",
+     "desc_en": "Refreshing coffee with ice.",
+     "price": "80",
+     "tag": "демо",
+     "tag_en": "demo",
+     "hidden": false
+    }
+   ]
+  },
+  {
+   "id": "bakery",
+   "name": "Випічка",
+   "name_en": "Pastries",
+   "badge": "",
+   "badge_en": "",
+   "style": "",
+   "items": [
+    {
+     "id": "bakery1",
+     "name": "Круасан",
+     "name_en": "Croissant",
+     "desc": "Масляний, з хрусткою скоринкою.",
+     "desc_en": "Buttery, with a crisp crust.",
+     "price": "55",
+     "tag": "демо",
+     "tag_en": "demo",
+     "hidden": false
+    },
+    {
+     "id": "bakery2",
+     "name": "Булочка з корицею",
+     "name_en": "Cinnamon bun",
+     "desc": "М'яка, ароматна, ще тепла.",
+     "desc_en": "Soft, fragrant, still warm.",
+     "price": "50",
+     "tag": "демо",
+     "tag_en": "demo",
+     "hidden": false
+    },
+    {
+     "id": "bakery3",
+     "name": "Сирник",
+     "name_en": "Syrnyk (cheese pancake)",
+     "desc": "Ніжний, зі сметаною.",
+     "desc_en": "Tender, served with sour cream.",
+     "price": "60",
+     "tag": "демо",
+     "tag_en": "demo",
+     "hidden": false
+    },
+    {
+     "id": "bakery4",
+     "name": "Пиріг дня",
+     "name_en": "Pie of the day",
+     "desc": "Щодня нова начинка.",
+     "desc_en": "A new filling every day.",
+     "price": "65",
+     "tag": "демо",
+     "tag_en": "demo",
+     "hidden": false
+    }
+   ]
+  },
+  {
+   "id": "dessert",
+   "name": "Десерти",
+   "name_en": "Desserts",
+   "badge": "",
+   "badge_en": "",
+   "style": "",
+   "items": [
+    {
+     "id": "dessert1",
+     "name": "Чізкейк",
+     "name_en": "Cheesecake",
+     "desc": "Вершковий, на тонкій основі.",
+     "desc_en": "Creamy, on a thin base.",
+     "price": "110",
+     "tag": "демо",
+     "tag_en": "demo",
+     "hidden": false
+    },
+    {
+     "id": "dessert2",
+     "name": "Медовик",
+     "name_en": "Medovyk (honey cake)",
+     "desc": "Класичний торт на меду.",
+     "desc_en": "A classic honey layer cake.",
+     "price": "90",
+     "tag": "демо",
+     "tag_en": "demo",
+     "hidden": false
+    },
+    {
+     "id": "dessert3",
+     "name": "Тірамісу",
+     "name_en": "Tiramisu",
+     "desc": "Кава, маскарпоне та какао.",
+     "desc_en": "Coffee, mascarpone and cocoa.",
+     "price": "120",
+     "tag": "демо",
+     "tag_en": "demo",
+     "hidden": false
+    },
+    {
+     "id": "dessert4",
+     "name": "Макарон",
+     "name_en": "Macaron",
+     "desc": "Хрусткий зовні, ніжний всередині.",
+     "desc_en": "Crisp outside, tender inside.",
+     "price": "45",
+     "tag": "демо",
+     "tag_en": "demo",
+     "hidden": false
+    }
+   ]
+  }
+ ]
+}

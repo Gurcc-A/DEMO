@@ -1,0 +1,24 @@
+/* Додаткові сторінки */
+.hero{background:#FFC21A;border-bottom:3px solid #17140F}
+.wrap{max-width:1200px;margin:0 auto;padding:56px 24px}
+.hero h1{margin:0 0 12px;font-family:'Unbounded',sans-serif;font-weight:700;font-size:clamp(32px,5vw,56px);line-height:1.08}
+.hero p{margin:0;font-size:18px;line-height:1.55;max-width:600px}
+.sec{max-width:1200px;margin:0 auto;padding:56px 24px}
+.t{font-family:'Unbounded',sans-serif;font-size:28px;margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.card{border:3px solid #17140F;border-radius:24px;padding:28px;background:#fff;display:flex;flex-direction:column;align-items:flex-start}
+.card.y{background:#FFC21A}
+.card h3{margin:0 0 10px;font-family:'Unbounded',sans-serif;font-size:22px;line-height:1.2}
+.card p{margin:0 0 16px;font-size:16px;line-height:1.55;width:100%}
+.card .btn{margin-top:auto}
+.tag{display:inline-block;background:#17140F;color:#FFC21A;font-weight:800;font-size:13px;padding:4px 12px;border-radius:999px;margin-bottom:12px}
+.card.y .tag{background:#FFF6DC;color:#17140F}
+.ph{border:2px dashed #8A7D5A;border-radius:16px;padding:16px;background:#FFFBF0;color:#5B5340;font-size:15px;line-height:1.5}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 24px;border-radius:999px;background:#17140F;color:#FFC21A;font-weight:800;text-decoration:none;box-sizing:border-box}
+.btn:hover{color:#FFC21A;background:#6B4A00}
+.btn.o{background:transparent;color:#17140F;border:2px solid #17140F}
+.btn.o:hover{background:#17140F;color:#FFC21A}
+.prose{max-width:720px;font-size:17px;line-height:1.65}
+.prose h2{font-family:'Unbounded',sans-serif;font-size:22px;margin:32px 0 10px}
+.prose li{margin-bottom:8px}
+a:focus-visible,.btn:focus-visible{outline:3px solid #6B4A00;outline-offset:2px}
